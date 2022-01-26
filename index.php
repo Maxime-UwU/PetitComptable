@@ -1,38 +1,26 @@
-<!DOCTYPE html>
-<html lang="fr">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulaire en PHP/MySQL</title>
     <link rel="stylesheet" href="yolo.css">
 </head>
-
 <body>
+<div class="container">
+<form method="post" action="controller.php">
+    <div class="formulaire">
 
+        <p>Création d'un compte bancaire</p>
+        <input  type="name" name="Nom" placeholder="Entrez votre nom" autocomplete="off" /><br />
+        <input  type="provision" name="Provision" placeholder="Entrez votre Provision" autocomplete="off" /><br />
+        <select  type="type" name="Type" placeholder="Entrer votre Type" autocomplete="off" />
+            <option  value="">--choix du type--</option>
+            <option  value="courant">courant</option>
+            <option  value="epargne">epargne</option>
+            <option  value="compte joint">compte joint</option>
+        </select><br />
+        <input  type="devise" name="Devise" placeholder="Entrez votre Devise" autocomplete="off" /><br />
+        <input  type="submit" name="creationCompteBtn" value="valider" />
+    </div>
 
-        <h1>Ptit comptable</h1>
-
-        <button id="yolo">cc</button>
-        <form action="" method="get" class="form-creat-account">
-            <div class="form-account">
-                <label for="Name">Nom</label>
-                <input id="inputName"><br>
-                <label for="solde">Solde</label>
-                <input id="inputSolde"><br>
-                <label for="type">type</label>
-                <input id="inputType"><br>
-                <label for="devise">devise</label>
-                <input id="inputDevise"><br>
-                <label for="budget">budget</label>
-                <input id="inputBudget"><br>
-                <input type="submit" class="button" id="buttonValider">
-            </div>
-
-            <input type="submit" class="buttonsup" id="sup">
-
-        </form>
+</div>
 </body>
-
 </html>
