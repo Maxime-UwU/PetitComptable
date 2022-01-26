@@ -17,10 +17,10 @@
             <option  value="epargne">epargne</option>
             <option  value="compte joint">compte joint</option>
         </select><br />
-        <select  type="type" name="devise" placeholder="Entrer votre devise" autocomplete="off" />
+        <select  type="devise" name="devise" placeholder="Entrer votre devise" autocomplete="off" />
         <option  value="">--choix de la devise--</option>
-        <option  value="courant">EUR</option>
-        <option  value="courant">USD</option>
+        <option  value="EUR">EUR</option>
+        <option  value="USD">USD</option>
         </select><br />
         <input  type="submit" name="creationCompteBtn" value="valider" />
     </div>

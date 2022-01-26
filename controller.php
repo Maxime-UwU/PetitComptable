@@ -13,19 +13,26 @@ function limit ($IDuser) {
 
     $reqUser = $db->prepare('SELECT * FROM Compte_bancaire WHERE IDuser = ?');
 
+     $sup = array ("");
     $reqUser->execute(array( $IDuser));
 
     $data = $reqUser->rowCount();
 
-    if ($data > 3) {
+    if ($data > 8) {
         echo "ERREUR : Vous avez atteint la limite maximum de compte bancaire.";
         die();
     }
 
 }
 
-function supIDB (){
+function supIDB ($IDB){
+
     $db = db_connect();
+
+    $reqUser = $db->prepare('SELECT * FROM Compte_bancaire WHERE IDB = ?');
+
+    $reqUser->execute(array($IDB));
+
 
 }
 
