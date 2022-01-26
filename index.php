@@ -9,15 +9,19 @@
     <div class="formulaire">
 
         <p>Création d'un compte bancaire</p>
-        <input  type="name" name="Nom" placeholder="Entrez votre nom" autocomplete="off" /><br />
-        <input  type="provision" name="Provision" placeholder="Entrez votre Provision" autocomplete="off" /><br />
+        <input  type="text" name="Nom" placeholder="Entrez votre nom" autocomplete="off" /><br />
+        <input  type="number" step="0.01" name="Provision" placeholder="Entrez votre Provision" autocomplete="off" /><br />
         <select  type="type" name="Type" placeholder="Entrer votre Type" autocomplete="off" />
             <option  value="">--choix du type--</option>
             <option  value="courant">courant</option>
             <option  value="epargne">epargne</option>
             <option  value="compte joint">compte joint</option>
         </select><br />
-        <input  type="devise" name="Devise" placeholder="Entrez votre Devise" autocomplete="off" /><br />
+        <select  type="type" name="devise" placeholder="Entrer votre devise" autocomplete="off" />
+        <option  value="">--choix de la devise--</option>
+        <option  value="courant">EUR</option>
+        <option  value="courant">USD</option>
+        </select><br />
         <input  type="submit" name="creationCompteBtn" value="valider" />
     </div>
 

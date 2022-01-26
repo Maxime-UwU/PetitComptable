@@ -1675,7 +1675,7 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Engine>InnoDB</Engine>
       <CollationName>utf8_general_ci</CollationName>
     </table>
-    <table id="415" parent="227" name="Opération">
+    <table id="415" parent="227" name="Operation">
       <Engine>InnoDB</Engine>
       <CollationName>utf8_general_ci</CollationName>
     </table>
@@ -15283,6 +15283,7 @@ User</ColNames>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="2696" parent="414" name="IDuser">
       <DataType>int(10)|0s</DataType>
@@ -15311,6 +15312,8 @@ User</ColNames>
     </column>
     <foreign-key id="2701" parent="414" name="compte_bancaire_ibfk_1">
       <ColNames>IDuser</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
       <RefColNames>IDuser</RefColNames>
       <RefTableName>Utilisateur</RefTableName>
     </foreign-key>
@@ -15327,6 +15330,7 @@ User</ColNames>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="2705" parent="415" name="IDB">
       <DataType>int(10)|0s</DataType>
@@ -15351,8 +15355,10 @@ User</ColNames>
       <DataType>date|0s</DataType>
       <Position>6</Position>
     </column>
-    <foreign-key id="2710" parent="415" name="opération_ibfk_1">
+    <foreign-key id="2710" parent="415" name="operation_ibfk_1">
       <ColNames>IDB</ColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
       <RefColNames>IDB</RefColNames>
       <RefTableName>Compte_bancaire</RefTableName>
     </foreign-key>
@@ -15369,6 +15375,7 @@ User</ColNames>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
       <Position>1</Position>
+      <SequenceIdentity>null</SequenceIdentity>
     </column>
     <column id="2714" parent="416" name="EMAILuser">
       <DataType>char(100)|0s</DataType>
