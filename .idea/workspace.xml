@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3bbfa74c-8ef1-49b8-83c8-a9cc8a31925b" name="Changes" comment="" />
+    <list default="true" id="3bbfa74c-8ef1-49b8-83c8-a9cc8a31925b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/fonctionsComptBancaire/supprimer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonctionsOperation/modifier.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fonctionsOperation/supprimer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/controller.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ptitcomp_4.sql" beforeDir="false" afterPath="$PROJECT_DIR$/ptitcomp.sql" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,6 +48,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="hive&#10;mysql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -51,7 +59,10 @@
     <property name="settings.editor.selected.configurable" value="settings.php.debug.servers" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.php">
+  <component name="RunManager" selected="JavaScript Debug.dashboard.php">
+    <configuration name="dashboard.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/PetitComptable/dashboard.php" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="index.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/PetitComptable/index.php" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -63,6 +74,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.dashboard.php" />
         <item itemvalue="JavaScript Debug.index.php" />
         <item itemvalue="PHP Script.test.php" />
         <item itemvalue="PHP Script.index.php" />
@@ -94,5 +106,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

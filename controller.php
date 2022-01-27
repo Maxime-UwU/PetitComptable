@@ -18,7 +18,7 @@ function limit ($IDuser) {
 
     $data = $reqUser->rowCount();
 
-    if ($data > 8) {
+    if ($data > 10) {
         echo "ERREUR : Vous avez atteint la limite maximum de compte bancaire.";
         die();
     }
