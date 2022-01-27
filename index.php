@@ -22,7 +22,7 @@
         <option  value="EUR">EUR</option>
         <option  value="USD">USD</option>
         </select><br />
-        <input  type="submit" name="creationCompteBtn" value="valider" />
+        <input  type="submit" name="creationCompteBtn" value="valider" onclick="location.href='dashboard.php';" />
     </div>
 
 </div>

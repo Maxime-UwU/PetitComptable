@@ -6,13 +6,11 @@
 <body>
 <div class="container">
         <p>Ptit Comptable</p>
-    <a href="index.php">
-        <button class="button" name="creationCompteBtn">Compte Bancaire</button>
-    </a>
 
-    <a href="index.php">
-        <button class="button" name="creationCompteBtn">Opération</button>
-    </a>
+    <input type="button" class="button_active" onclick="location.href='index.php';" value="Creation Compte Bancaire" />
+    <input type="button" class="button_active" onclick="location.href='Operation.php';" value="Creation Opération" />
+
+
 
 </div>
 </body>
