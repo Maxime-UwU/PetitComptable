@@ -3,6 +3,7 @@ body {
     background: linear-gradient(217deg, rgba(162, 0, 255, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(74, 146, 214, 0.8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(336deg, rgba(100, 26, 150, 0.8), rgba(0, 0, 255, 0) 70.71%);
     background-repeat: no-repeat;
     font-family: 'Dongle', sans-serif;
+    height: 1080px;
 }
 
 h1 {
