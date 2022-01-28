@@ -5,17 +5,17 @@ require_once 'config.php';
 /**
  * Used to get all account of an user
  *
- * @param $idUser
+ * @param $name
  * @return array|false
  */
 
 //création de la fonction getAccountList
-function getAccountList($idUser)
+function getAccountList($name)
 {
     $db = db_connect();
 
-    $reqUser = $db->prepare('SELECT * FROM Compte_bancaire WHERE IDuser = :IDuser ');
-    $reqUser->execute(array("IDuser" => $idUser));
+    $reqUser = $db->prepare('SELECT * FROM categorie WHERE IDuser = :name ');
+    $reqUser->execute(array("name" => $name));
 
     return $reqUser->fetchAll();
 }

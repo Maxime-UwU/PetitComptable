@@ -1,7 +1,6 @@
 <?php
-
-//fonction permettant de se connecter à la base de données
-function db_connect (){
+function db_connect()
+{
     try {
         $host = "localhost";
         $dbname = "ptitcomp";
@@ -10,12 +9,8 @@ function db_connect (){
 
         $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
 
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $db->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-
         return $db;
-    }
-    catch(Exception $e){
+    } catch (Exception $e) {
         die('Erreur : ' . $e->getMessage());
     }
 }

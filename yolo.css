@@ -15,7 +15,6 @@ body {
 }
 
 
-
 .formulaire {
     background: rgba(255, 255, 255, .3);
     padding: 3rem;
@@ -48,6 +47,7 @@ select {
     transition: all .3s;
     margin-bottom: 2em;
 }
+
 input {
     background: transparent;
     border: none;
@@ -70,12 +70,12 @@ input {
 .submit {
     padding: 15px 25px;
     border-radius: 5px;
-    border:none;
+    border: none;
     font-size: 15px;
     color: #fff;
     background-color: #eb7371;
-    outline:none;
-    cursor:pointer;
+    outline: none;
+    cursor: pointer;
     margin-bottom: 15px;
     margin-left: 20px;
 }
@@ -100,9 +100,9 @@ input:hover,
 input[type="name"]:focus,
 input[type="provision"]:focus,
 input[type="type"]:focus,
-input[type="devise"]:focus{
-    background: rgba(255,255,255,0.1);
-    box-shadow: 4px 4px 60px 8px rgba(0,0,0,0.2);
+input[type="devise"]:focus {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
 }
 
 ::placeholder {

@@ -1,99 +1,90 @@
 <?php
-
-
-
+//vérifie si le fichier a déjà été inclus
 require_once 'config.php';
 
-session_start();/*
+//session_start();
+/*
 if (!isset($_SESSION['user']))*/
 
-function limit ($IDuser) {
 
+//function permettant de limiter le nombre de compte à 10
+
+function limit($IDuser)
+{
+
+    //connection a la bdd
     $db = db_connect();
 
+    //requete permettant de recuperrer les donnees
     $reqUser = $db->prepare('SELECT * FROM Compte_bancaire WHERE IDuser = ?');
 
-     $sup = array ("");
-    $reqUser->execute(array( $IDuser));
+    $sup = array("");
+    //execution de la requete
+    $reqUser->execute(array($IDuser));
 
+    //cration d'une variable permettant de compter le nombre de ligne
     $data = $reqUser->rowCount();
 
-    if ($data > 8) {
+    //condition que lorsque la variable data est superieur a 10 alors il affiche une erreur et de quitter la fonction
+    if ($data > 10) {
         echo "ERREUR : Vous avez atteint la limite maximum de compte bancaire.";
         die();
     }
 
 }
 
-function supIDB ($IDB){
 
-    $db = db_connect();
-
-    $reqUser = $db->prepare('SELECT * FROM Compte_bancaire WHERE IDB = ?');
-
-    $reqUser->execute(array($IDB));
+if (isset($_POST['creationCompteBtn'])) {
 
 
-}
-
-   /* $db = db_connect();
-    $req = $db->prepare( 'SELECT IDB FROM Compte_bancaire ' );
-    $req->execute( array($IDuser));
-    $stockIDuse = fetch
-
-
-
-$stockIDuser = array()*/
-
-
-
-if( isset($_POST['creationCompteBtn'] ) ) {
-
-
-
+//Declaration de variable
     $Nom = $_POST["Nom"];
     $Provision = $_POST["Provision"];
     $Type = $_POST["Type"];
     $Devise = $_POST["devise"];
 
 
-    if (filter_var($Nom, FILTER_VALIDATE_INT)){
-        echo "ERREUR : Le nom ne peut pas etre composé de chiffre.";
+//condition qui verifie si les elements dans l'input Nom contient des chiffres alors il affiche une erreur et quitte la fonction
+    if (filter_var($Nom, FILTER_VALIDATE_INT)) {
+        echo "ERREUR : Le nom ne peut pas etre composé de chiffre ! retourné sur la page précédante.";
+        die;
+
+
+    } //condition qui verifie si les elements dans l'input Provision ne contient pas de chiffre alors il affiche une erreur et quitte la fonction
+    else if (!is_numeric($Provision)) {
+        echo "ERREUR : La provision ne peut pas etre composé de lettre ! retourné sur la page précédante.";
+        die;
+    } //condition qui verifie si les elements dans l'input Nom  contient des caracteres speciaux alors il affiche une erreur et quitte la fonction
+
+    else if (!ctype_alpha($Nom)) {
+        echo "ERREUR : Le nom ne peut contrenir que des lettres ! retourné sur la page précédante.";
         die;
     }
 
-   else if ( !is_numeric( $Provision) ){
-        echo "ERREUR : La provision ne peut pas etre composé de lettre.";
+    //condition qui verifie si les elements dans les inputs  contiennent rien alors il affiche une erreur et quitte la fonction
+
+    if (empty($Nom) || empty($Provision) || empty($Type) || empty($Devise)) {
+        echo "ERREUR : tous les champs n'ont pas ete renseignés ! retourné sur la page précédante.";
         die;
+    } //condition qui renvoie sur le dashboard
+
+    else {
+
+        header("Location:dashboard.php");
     }
 
-   else if (!ctype_alpha($Nom)){
-       echo "ERREUR : Le nom ne peut contrenir que des lettres.";
-       die;
-   }
-
-    // Conditions pour vérifier l'intégrité des données
-
-
-    if (empty($Nom) || empty($Provision) || empty($Type) || empty($Devise))
-    {
-        echo "ERREUR : tous les champs n'ont pas ete renseignés.";
-        die;
-    }
-
-
+//Apelle de la fonction limit
     limit(1);
-
-    // Si c'est OK, on ajoute en BDD
 
 
     // Connexion BDD
     $db = db_connect();
 
-    $req = $db->prepare( 'INSERT INTO Compte_bancaire (IDuser, NOMcompte, Provision, Type, DeviseCompte) VALUES (:IDuser, :NOMcompte, :Provision, :TypeCompte, :DeviseCompte)' );
-    echo $Nom . $Provision . $Type . $Devise;
-    $req->execute( array(
-        'IDuser'    => 1,
+    //requette qui permet d'envoyer les donnees inputs dans la bdd
+    $req = $db->prepare('INSERT INTO Compte_bancaire (IDuser, NOMcompte, Provision, Type, DeviseCompte) VALUES (:IDuser, :NOMcompte, :Provision, :TypeCompte, :DeviseCompte)');
+    //execute la requette
+    $req->execute(array(
+        'IDuser' => 1,
         'NOMcompte' => $Nom,
         'Provision' => $Provision,
         'TypeCompte' => $Type,
@@ -101,71 +92,5 @@ if( isset($_POST['creationCompteBtn'] ) ) {
     ));
 
 
-
-    // A retirer apres les test
-    //die;
-
-
-    // Redirection vers mon formulaire
 }
-
-
-
-
-
-
-
-/********/
-
-
-
-// Vérifie qu'il provient d'un formulaire
-/*if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $Nom = $_POST["Nom"];
-    $Provision = $_POST["Provision"];
-
-    if (!isset($Nom)){
-        die("S'il vous plaît entrez votre nom");
-    }
-
-
-    print "Salut " . $Nom ;
-}
-?>
-
-
-<?php
-require_once 'config.php';
-$db = db_connect();
-// Vérifie qu'il provient d'un formulaire
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    //identifiants mysql
-    $host = "localhost";
-    $username = "root";
-    $password = "root";
-    $database = "ptitcomp";
-
-
-
-    if (!isset($name)){
-        die("S'il vous plaît entrez votre nom");
-    }
-
-
-    //Ouvrir une nouvelle connexion au serveur MySQL
-    $mysqli = new mysqli($host, $username, $password, $database);
-
-    //Afficher toute erreur de connexion
-    if ($mysqli->connect_error) {
-        die('Error : ('. $mysqli->connect_errno .') '. $mysqli->connect_error);
-    }
-
-
-    $sql ="INSERT INTO Compte_bancaire (NomNompte, prevision, Type, DeviseCompte)VALUES ('$Nom','$Provision', '$Type', '$Devise');";
-
-    mysqli_query($db, $sql);
-
-
-}*/
 ?>

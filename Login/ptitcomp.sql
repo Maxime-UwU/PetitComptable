@@ -126,7 +126,7 @@ CREATE TABLE `Utilisateur`
 --
 
 INSERT INTO `Utilisateur` (`IDuser`, `EMAILuser`, `MDPuser`)
-VALUES (1, 'jean.charle@gmail.com', 'jean1234'),
+VALUES (1, 'jean.charle@gmail.com', '573732217e6346bab5756887b3a4e8d04f683814b45267e362cc945f7d66b5b9'),
        (2, 'jean.CLAUDE@gmail.com', 'clauden1234'),
        (3, 'jean.mark@gmail.com', 'markj1234'),
        (4, 'jean.pierre@gmail.com', 'pierre1234'),
