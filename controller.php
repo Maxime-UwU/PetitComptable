@@ -25,7 +25,7 @@ function limit($IDuser)
     //cration d'une variable permettant de compter le nombre de ligne
     $data = $reqUser->rowCount();
 
-    //condition que lorsque la variable data est superieur a 10 alors il affiche une erreur et de quitter la fonction
+    //condition que lorsque la variable data est superieur a 10 alors il affiche une erreur et de quitter le script
     if ($data > 10) {
         echo "ERREUR : Vous avez atteint la limite maximum de compte bancaire.";
         die();
@@ -44,24 +44,24 @@ if (isset($_POST['creationCompteBtn'])) {
     $Devise = $_POST["devise"];
 
 
-//condition qui verifie si les elements dans l'input Nom contient des chiffres alors il affiche une erreur et quitte la fonction
+//condition qui verifie si les elements dans l'input Nom contient des chiffres alors il affiche une erreur et quitter le script
     if (filter_var($Nom, FILTER_VALIDATE_INT)) {
         echo "ERREUR : Le nom ne peut pas etre composé de chiffre ! retourné sur la page précédante.";
         die;
 
 
-    } //condition qui verifie si les elements dans l'input Provision ne contient pas de chiffre alors il affiche une erreur et quitte la fonction
+    } //condition qui verifie si les elements dans l'input Provision ne contient pas de chiffre alors il affiche une erreur et quitter le script
     else if (!is_numeric($Provision)) {
         echo "ERREUR : La provision ne peut pas etre composé de lettre ! retourné sur la page précédante.";
         die;
-    } //condition qui verifie si les elements dans l'input Nom  contient des caracteres speciaux alors il affiche une erreur et quitte la fonction
+    } //condition qui verifie si les elements dans l'input Nom  contient des caracteres speciaux alors il affiche une erreur et quitter le script
 
     else if (!ctype_alpha($Nom)) {
         echo "ERREUR : Le nom ne peut contrenir que des lettres ! retourné sur la page précédante.";
         die;
     }
 
-    //condition qui verifie si les elements dans les inputs  contiennent rien alors il affiche une erreur et quitte la fonction
+    //condition qui verifie si les elements dans les inputs  contiennent rien alors il affiche une erreur et quitter le script
 
     if (empty($Nom) || empty($Provision) || empty($Type) || empty($Devise)) {
         echo "ERREUR : tous les champs n'ont pas ete renseignés ! retourné sur la page précédante.";
